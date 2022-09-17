@@ -18,6 +18,14 @@ on late-init
     setprop sys.usb.configfs 1
     setprop sys.usb.config adb
 
+
+on fs
+    wait /dev/block/platform/13500000.ufs
+    symlink /dev/block/platform/13500000.ufs /dev/block/bootdevice
+    symlink /dev/block/platform/13500000.ufs/by-name /dev/block/by-name
+
+    export ANDROID_ROOT /system_root
+
 on boot
 
 # Set watchdog timer to 30 seconds and fed it every 10 seconds to get a 20 second margin
@@ -25,3 +33,4 @@ service watchdogd /system/bin/watchdogd 10 20
     class core
     oneshot
     seclabel u:r:watchdogd:s0
+
