@@ -26,6 +26,9 @@ odm		/odm		ext4						wait,logical,first_stage_mount
 /efs		ext4		/dev/block/bootdevice/by-name/efs		flags=backup=1;display="EFS"
 /sec_efs	ext4		/dev/block/bootdevice/by-name/sec_efs		flags=backup=1;display="Sec EFS"
 /modem		emmc		/dev/block/bootdevice/by-name/radio		flags=backup=1;display="Modem"
+/preload	ext4		/dev/block/bootdevice/by-name/hidden		flags=backup=1;display="Preload"
+/misc		emmc		/dev/block/bootdevice/by-name/misc		flags=backup=1;display="Misc"
+/keyrefuge	f2fs		/dev/block/bootdevice/by-name/keyrefuge		flags=backup=1;display="Keyrefuge"
 /dtbo		emmc		/dev/block/bootdevice/by-name/dtbo		flags=backup=1;flashimg;display="Dtbo"
 /cp_debug	emmc		/dev/block/bootdevice/by-name/cp_debug		flags=backup=1;display="CP Debug"
 /param		emmc		/dev/block/bootdevice/by-name/param		flags=backup=1;display="Param"
@@ -33,7 +36,7 @@ odm		/odm		ext4						wait,logical,first_stage_mount
 /prism_image	emmc		/dev/block/bootdevice/by-name/prism		flags=backup=1;flashimg;display="Prism Image"
 /vbmeta_system	emmc		/dev/block/bootdevice/by-name/vbmeta_system
 /vendor_boot	emmc		/dev/block/bootdevice/by-name/vendor_boot	flags=backup=1;flashimg;display="Vendor Boot"
-/vbmeta_samsung	emmc		/dev/block/bootdevice/by-name/vbmeta_samsung
+/vbmeta	emmc		/dev/block/bootdevice/by-name/vbmeta	flags=backup=1;flashimg;display="VBmeta"
 
 # Removable storage
 /external_sd	vfat		/dev/block/mmcblk0p1	/dev/block/mmcblk0	flags=storage;wipeingui;removable
